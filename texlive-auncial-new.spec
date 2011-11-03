@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/auncial-new
+# catalog-date 2008-08-16 20:32:59 +0200
+# catalog-license lppl
+# catalog-version 2.0
 Name:		texlive-auncial-new
 Version:	2.0
 Release:	1
@@ -65,6 +71,7 @@ mainly follows the standard T1 encoding.
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmfb.dtx
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmfc.dtx
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmft.dtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -75,3 +82,5 @@ mainly follows the standard T1 encoding.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
