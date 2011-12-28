@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The auncial-new bundle provides packages and fonts for a script
@@ -34,20 +31,12 @@ bookhand fonts. The font follows the B1 encoding developed for
 bookhands. Access to the encoding is essential. The encoding
 mainly follows the standard T1 encoding.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -72,7 +61,6 @@ mainly follows the standard T1 encoding.
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmfb.dtx
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmfc.dtx
 %doc %{_texmfdistdir}/source/fonts/auncial-new/aunclmft.dtx
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -83,5 +71,3 @@ mainly follows the standard T1 encoding.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
