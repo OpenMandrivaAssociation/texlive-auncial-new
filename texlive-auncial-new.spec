@@ -6,7 +6,7 @@
 # catalog-version 2.0
 Name:		texlive-auncial-new
 Version:	2.0
-Release:	4
+Release:	5
 Summary:	Artificial Uncial font and LaTeX support macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/auncial-new
