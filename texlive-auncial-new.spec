@@ -5,9 +5,9 @@ Summary:	Artificial Uncial font and LaTeX support macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/auncial-new
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.r62977.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.doc.r62977.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.source.r62977.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
