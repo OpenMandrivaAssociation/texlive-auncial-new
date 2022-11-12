@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/auncial-new
-# catalog-date 2008-08-16 20:32:59 +0200
-# catalog-license lppl
-# catalog-version 2.0
 Name:		texlive-auncial-new
-Version:	2.0
-Release:	11
+Version:	62977
+Release:	1
 Summary:	Artificial Uncial font and LaTeX support macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/auncial-new
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.r62977.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.doc.r62977.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.source.r62977.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -32,12 +26,12 @@ bookhands. Access to the encoding is essential. The encoding
 mainly follows the standard T1 encoding.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -64,25 +58,11 @@ mainly follows the standard T1 encoding.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Jan 03 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.0-2
-+ Revision: 749422
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.0-1
-+ Revision: 717868
-- texlive-auncial-new
-- texlive-auncial-new
-- texlive-auncial-new
-- texlive-auncial-new
-- texlive-auncial-new
-
