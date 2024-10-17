@@ -3,7 +3,7 @@ Version:	62977
 Release:	2
 Summary:	Artificial Uncial font and LaTeX support macros
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/auncial-new
+URL:		https://www.ctan.org/tex-archive/fonts/auncial-new
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/auncial-new.doc.r%{version}.tar.xz
